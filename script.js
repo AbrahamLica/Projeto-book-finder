@@ -50,8 +50,6 @@ async function buscarLivro() {
         img.setAttribute('src', 'imgs/teste.png')
       }
     }
-  } else {
-    txtAviso.innerHTML = 'Nada encontrado!'
   }
 }
 
@@ -64,6 +62,7 @@ function addEventos() {
     }
   })
 }
+
 
 
 window.addEventListener('load', addEventos)

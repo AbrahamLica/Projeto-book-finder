@@ -1,3 +1,6 @@
+*{
+  box-sizing: border-box;
+}
 
 
 /*////////////// Modelo Livro ///////////*/
@@ -26,18 +29,29 @@
   width: 100%;
 }
 
+
+
 .section-livro img{
-  margin-right: 10px;
-  object-fit: contain;
+  margin-right: 30px;
+  object-fit: cover;
   width: 150px;
   height: 200px;
   border-radius: 15px;
+  box-shadow: 4px 4px 8px black;
+  overflow: hidden;
+}
+
+.section-livro img:hover{
+
+  transform: translateX(20px);
+  transition: 0.3s;
 }
 
 .imagem{
   flex: 1;
   justify-content: center;
   align-items: center;
+
 }
 
 .container-sections{
@@ -50,7 +64,19 @@
 
 .mini-section{
   display: flex;
+  flex-direction: row;
   margin-bottom: 5px;
+}
+
+
+.txt-titulo {
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 7px 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 15px;
 }
 
 label{
@@ -59,12 +85,13 @@ label{
 
 .txt{
   font-size: 17px;
+  text-align: center;
 }
 
-.txt-titulo {
-  text-align: center;
-  font-weight: bold;
-  font-size: 18px;
+.txt-titulo:hover {
+  transition: 0.4s;
+  background-color: black;
+  color: white;
 }
 
 /* ////////////////HEIGHT///////////////*/
@@ -82,14 +109,6 @@ label{
     height: 150px;
   }
 }
-
-
-
-
-
-
-
-
 
 
 
