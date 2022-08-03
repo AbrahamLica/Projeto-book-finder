@@ -1,0 +1,17 @@
+/*////////////// Container de livros ///////////*/
+
+.container-livros{
+  display: none;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.container-livros-remove{
+  display: none;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
