@@ -39,7 +39,6 @@ async function buscarLivro() {
       dataPublicacao.innerHTML = await json.items[i].volumeInfo.publishedDate
       link.setAttribute('href', json.items[i].volumeInfo.previewLink)
 
-
       if (json.items[i].volumeInfo.readingModes.image == false && json.items[i].volumeInfo.imageLinks) {
         img.setAttribute('src', json.items[i].volumeInfo.imageLinks.thumbnail)
       } else if (json.items[i].volumeInfo.readingModes.text == false && json.items[i].volumeInfo.imageLinks) {
@@ -53,7 +52,7 @@ async function buscarLivro() {
   }
 }
 
-function addEventos() {
+async function addEventos() {
   btn.addEventListener('click', buscarLivro)
 
   window.addEventListener('keyup', function(e) {
