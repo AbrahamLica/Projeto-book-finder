@@ -1,0 +1,17 @@
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+footer p {
+     font-size: 17px;
+}
+
+footer a {
+   
+    font-weight: bold;
+    color: #00ADB5;
+}

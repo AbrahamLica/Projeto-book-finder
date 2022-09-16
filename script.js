@@ -14,15 +14,21 @@ var txtAviso = document.querySelector(".txt-aguarde")
 var link = document.querySelector(".link")
 ///////////////////////////////////////////////////////////////////////
 
+
 async function buscarLivro() {
   divRemover.innerHTML = await ''
-  txtAviso.innerHTML = await 'Carregando...'
+  if (campoDeBusca.value == '') {
+    txtAviso.innerHTML = await 'Não há resultados para esta pesquisa.'
+  } else {
+    txtAviso.innerHTML = await 'Carregando...'
   var busca = campoDeBusca.value
   var url = `https://www.googleapis.com/books/v1/volumes?q=${busca}`
   var req = await fetch(url)
   var json = await req.json()
   divRemover.innerHTML = await ''
   document.querySelector('.novo-livro').style.display = await 'flex'
+  }
+  
 
   if (json.totalItems > 1) {
     txtAviso.innerHTML = `Exibindo resultados para '${campoDeBusca.value}'`
@@ -34,10 +40,12 @@ async function buscarLivro() {
       divRemover.style.display = await 'flex'
       document.querySelector('.novo-livro').style.display = await 'flex'
       titulo.innerHTML = await json.items[i].volumeInfo.title
-      autor.innerHTML = await json.items[i].volumeInfo.authors
-      editora.innerHTML = await json.items[i].volumeInfo.publisher
-      dataPublicacao.innerHTML = await json.items[i].volumeInfo.publishedDate
+      titulo.setAttribute('href', json.items[i].volumeInfo.previewLink)
+      autor.innerHTML = 'Autor(es): ' + await json.items[i].volumeInfo.authors
+      editora.innerHTML = 'Editora: ' + await json.items[i].volumeInfo.publisher
+      dataPublicacao.innerHTML = 'Publicado em: ' + await json.items[i].volumeInfo.publishedDate
       link.setAttribute('href', json.items[i].volumeInfo.previewLink)
+      
 
       if (json.items[i].volumeInfo.readingModes.image == false && json.items[i].volumeInfo.imageLinks) {
         img.setAttribute('src', json.items[i].volumeInfo.imageLinks.thumbnail)
@@ -46,7 +54,7 @@ async function buscarLivro() {
       } else if (json.items[i].volumeInfo.readingModes.image == false && json.items[i].volumeInfo.readingModes.text == false && json.items[i].volumeInfo.imageLinks) {
         img.setAttribute('src', json.items[i].volumeInfo.imageLinks.thumbnail)
       } else {
-        img.setAttribute('src', 'imgs/teste.png')
+        img.setAttribute('src', 'imgs/sem-capa.png')
       }
     }
   }

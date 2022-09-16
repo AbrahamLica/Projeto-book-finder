@@ -3,37 +3,30 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Book Finder || 2022</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="modelo_livro.css">
-  <link rel="stylesheet" href="container_input.css">
-  <link rel="stylesheet" href="container_livros.css">
+  <title>Book Finder</title>
+  <link rel="shortcut icon" href="imgs/livro.ico" type="image/x-icon">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/container_input.css">
+  <link rel="stylesheet" href="css/container_livros.css">
+  <link rel="stylesheet" href="css/modelo_livro.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/media-queries.css">
 </head>
 
 <body>
 
   <div class="modelo-livro">
-    <div class="novo-livro">
-      <div class="section-livro">
-        <div class="imagem"><a href="" target="_blank" class="link"><img src="" alt="" class="img"></a></div>
-        <div class="container-sections">
-          <div class="mini-section">
-            <p class="txt-titulo">...</p>
-          </div>
-          <div class="mini-section">
-            <label>Autor(es):</label>
-            <p class="txt-autor txt ">...</p>
-          </div>
-          <div class="mini-section">
-            <label>Editora:</label>
-            <p class="txt-editora txt">...</p>
-          </div>
-          <div class="mini-section">
-            <label>Publicado em:</label>
-            <p class="txt-data-publicacao txt">...</p>
+    <div class="container-livro">
+        <div class="novo-livro">
+          <div class="imagem"><a href="" target="_blank" class="link"><img src="" alt="" class="img"></a></div>
+          <div class="container-sections">
+            <a href="" class="txt-titulo" target="_blank">Titulo</a>
+            <p class="txt-autor txt">Autores</p>
+            <p class="txt-editora txt">Editora:</p>
+            <p class="txt-data-publicacao txt">Publicado em:</p>
           </div>
         </div>
-      </div>
     </div>
   </div>
 
@@ -49,6 +42,10 @@
   <div class="container-livros">
     <div class="container-livros-remove"></div>
   </div>
+
+  <footer>
+    <p>Desenvolvido por <a href="https://github.com/AbrahamLica" target="_blank">Abraham Licá.</a></p>
+  </footer>
 
   <script src="script.js" charset="utf-8"></script>
 </body>

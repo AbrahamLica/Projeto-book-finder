@@ -1,0 +1,160 @@
+/* ////////////////HEIGHT///////////////*/
+
+/* @media (max-height: 1200px) {
+
+  .novo-livro {
+    width: 47vw;
+    height: 20vh;
+  }
+}
+
+@media (max-height: 1024px) {
+  .novo-livro {
+    width: 50vw;
+    height: 25vh;
+  }
+}
+
+@media (max-height: 860px) {
+
+  .img {
+    height: 150px;
+    width: 120px;
+  }
+} */
+
+@media (max-height: 630px) {
+  .img {
+    height: 180px;
+    width: 120px;
+  }
+}
+
+@media (max-height: 560px) {
+  .novo-livro {
+    height: 40vh;
+  }
+}
+
+@media (max-height: 500px) {
+  .img {
+    height: 150px;
+  }
+
+  .novo-livro {
+    height: 35vh;
+  }
+
+  .txt-titulo {
+    font-size: 15px;
+  }
+
+  .txt {
+    font-size: 14px;
+  }
+}
+
+
+
+
+  
+  /* ////////////////WIDTH///////////////*/
+  
+  @media (max-width: 1282px) {
+    .novo-livro {
+      width: 43vw;
+    }
+  }
+  
+  @media (max-width: 1170px) {
+    .novo-livro {
+      width: 60vw;
+    }
+  
+    .txt-titulo {
+      font-size: 16px;
+    }
+  }
+
+  @media (max-width: 877px) {
+    .novo-livro {
+      width: 85vw;
+    }
+  
+    .txt-titulo {
+      font-size: 16px;
+    }
+  }
+
+  @media (max-width: 665px) {
+    .novo-livro {
+      width: 85vw;
+    }
+  
+    .txt-titulo {
+      font-size: 16px;
+    }
+
+    .txt {
+      font-size: 14px;
+    }
+  }
+
+  @media (max-width: 530px) {
+    .novo-livro {
+      width: 90vw;
+      height: 28vh;
+    }
+  
+    .txt-titulo {
+      font-size: 14px;
+    }
+
+    .txt {
+      font-size: 12px;
+    }
+
+    .img {
+      height: auto;
+      width: 100px;
+    }
+    
+  }
+
+  @media (max-width: 450px) {
+    .txt-aguarde {
+      font-size: 20px;
+    }
+
+    .input-busca {
+      width: 250px;
+    }
+
+    .btn-buscar {
+      height: 30px;
+    }
+    
+    .container > h1 {
+      font-size: 30px;
+    }
+  }
+
+  @media (max-width: 390px) {
+    .txt-aguarde {
+      font-size: 14px;
+    }
+
+    .input-busca {
+      width: 200px;
+    }
+
+    .btn-buscar {
+      height: 30px;
+    }
+    
+    .container > h1 {
+      font-size: 28px;
+    }
+  }
+  
+  
