@@ -18,17 +18,15 @@
   padding: 15px;
 }
 
-.imagem {
-  flex: 1;
-}
+
 
 .img {
-  /* margin-right: 30px; */
-  object-fit: cover;
-  width: 150px;
-  height: 200px;
+  object-fit: fill;
+  width: 11vw;
+  height: 32vh;
   border-radius: 15px;
-  box-shadow: 4px 4px 8px black;
+  /* box-shadow: 1px 1px 1px black; */
+  
 }
 
 .img:hover {
