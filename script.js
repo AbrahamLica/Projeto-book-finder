@@ -12,15 +12,18 @@ var divRemover = document.querySelector('.container-livros-remove')
 var teste = document.querySelector('.modelo-livro')
 var txtAviso = document.querySelector(".txt-aguarde")
 var link = document.querySelector(".link")
+var animacao = document.querySelector(".loader")
 ///////////////////////////////////////////////////////////////////////
 
 
 async function buscarLivro() {
+  animacao.style.display = 'block'
   divRemover.innerHTML = await ''
   if (campoDeBusca.value == '') {
     txtAviso.innerHTML = await 'Não há resultados para esta pesquisa.'
+    animacao.style.display = 'none'
   } else {
-    txtAviso.innerHTML = await 'Carregando...'
+  txtAviso.innerHTML = await 'Carregando...'
   var busca = campoDeBusca.value
   var url = `https://www.googleapis.com/books/v1/volumes?q=${busca}`
   var req = await fetch(url)
@@ -28,22 +31,24 @@ async function buscarLivro() {
   divRemover.innerHTML = await ''
   document.querySelector('.novo-livro').style.display = await 'flex'
   }
-  
 
   if (json.totalItems > 1) {
-    txtAviso.innerHTML = `Exibindo resultados para '${campoDeBusca.value}'`
-    for (var i = 0; i < json.items.length + 1; i++) {
-      var newLivro = await novoLivro.cloneNode(true)
-      var add = await divRemover.append(newLivro)
-      document.querySelector('.container-livros-remove').children[0].style.display = await 'none'
-      containerLivros.style.display = await 'flex'
-      divRemover.style.display = await 'flex'
-      document.querySelector('.novo-livro').style.display = await 'flex'
-      titulo.innerHTML = await json.items[i].volumeInfo.title
+     setTimeout(()  =>  {
+      animacao.style.display = 'none'
+
+      txtAviso.innerHTML = `Exibindo resultados para '${campoDeBusca.value}'`
+      for (var i = 0; i < json.items.length + 1; i++) {
+      var newLivro =  novoLivro.cloneNode(true)
+      var add =  divRemover.append(newLivro)
+      document.querySelector('.container-livros-remove').children[0].style.display =  'none'
+      containerLivros.style.display =  'flex'
+      divRemover.style.display =  'flex'
+      document.querySelector('.novo-livro').style.display =  'flex'
+      titulo.innerHTML =  json.items[i].volumeInfo.title
       titulo.setAttribute('href', json.items[i].volumeInfo.previewLink)
-      autor.innerHTML = 'Autor(es): ' + await json.items[i].volumeInfo.authors
-      editora.innerHTML = 'Editora: ' + await json.items[i].volumeInfo.publisher
-      dataPublicacao.innerHTML = 'Publicado em: ' + await json.items[i].volumeInfo.publishedDate
+      autor.innerHTML = 'Autor(es): ' +  json.items[i].volumeInfo.authors
+      editora.innerHTML = 'Editora: ' +  json.items[i].volumeInfo.publisher
+      dataPublicacao.innerHTML = 'Publicado em: ' +  json.items[i].volumeInfo.publishedDate
       link.setAttribute('href', json.items[i].volumeInfo.previewLink)
       
 
@@ -57,7 +62,9 @@ async function buscarLivro() {
         img.setAttribute('src', 'imgs/sem-capa.png')
       }
     }
-  }
+    
+    }, 1000);
+  }   
 }
 
 async function addEventos() {
