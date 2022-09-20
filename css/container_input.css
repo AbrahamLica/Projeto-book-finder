@@ -15,14 +15,18 @@
   justify-content: center;
   margin-top: 50px;
   margin-bottom: 20px;
-
+  width: 30%;
 }
 
 .input-busca{
-  width: 40vw;
+  width: 100%;
   height: 30px;
   padding: 15px;
   font-size: 20px;
+}
+
+.input-busca::placeholder {
+  font-size: 0.9em;
 }
 
 .btn-buscar{
