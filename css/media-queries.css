@@ -124,7 +124,18 @@
     }
   }
 
+  /* @media (prefers-color-scheme: dark) {
+    .novo-livro {
+      background-color: #EEEEEE;
+    }
+  } */
+
  
+  @media (prefers-color-scheme: dark) {
+    .novo-livro {
+      background-color: #EEEEEE;
+    }
+  }
 
 
 
